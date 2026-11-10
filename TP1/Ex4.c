@@ -20,17 +20,15 @@ int main(){
         printf("donner la valeur %d du tableau B :",i+1);
         scanf("%d",B+i);
     } 
+    A = realloc(A,sizeof(int)*(N+M));
     int * PA = A+N;
     int * PB = B;
-    A = realloc(A,sizeof(int)*(N+M));
     if(!A){
         printf("error");
         return 1;
     }
     for(int i = 0; i<M ; i++ ){
-        printf("\ntest: %d \n",*(PA+i));
         *(PA+i) = *(PB+i);
-        printf("\ntest: %d\n",*(PB+i));
     }
     printf("les valeurs du tableau A sont:\n");
     for(int i = 0 ; i<N+M ; i++){
